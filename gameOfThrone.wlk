@@ -4,6 +4,7 @@ import lugares.*
 object daenerys{
     const property artefactos = #{}
     const property historial_objetos = []
+    var property max_artefactos = 2
 
     method volverACasa() {
         rocadragon.artefactos().addAll(self.artefactos())
@@ -12,7 +13,7 @@ object daenerys{
 
     method encontrar(artefacto){
         historial_objetos.add(artefacto)
-        if (artefactos.size() < 2) {
+        if (artefactos.size() < max_artefactos) {
             artefactos.add(artefacto)
         } 
     }
