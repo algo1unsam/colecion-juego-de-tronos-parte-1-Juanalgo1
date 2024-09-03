@@ -1,4 +1,6 @@
 import gameOfThrone.*
+import artefactos.*
+import lugares.*
 
 test "encontrar artefactos" {
 	
@@ -19,22 +21,22 @@ test "castillo" {
  	daenerys.volverACasa()
  	
  	assert.that(daenerys.artefactos().isEmpty())
- 	assert.equals(#{espada,libro,collar}, castillo.artefactos())
+ 	assert.equals(#{espada,libro,collar}, rocadragon.artefactos())
  	
 }
 
 test "posesiones" {
 	
-	castillo.agregarArtefactos(#{collar, espada})
+	rocadragon.agregarArtefactos(#{collar, espada})
 	
 	daenerys.encontrar(armadura)
 	assert.equals(#{collar, armadura, espada}, daenerys.posesiones())
 	assert.that(daenerys.posee(armadura))
 	assert.notThat(daenerys.posee(libro))
-	
+
 }
 
-test "historia" {
+test "historial objetos" {
 	daenerys.encontrar(espada)
 	daenerys.encontrar(libro)
 	daenerys.encontrar(collar)
@@ -42,5 +44,5 @@ test "historia" {
 	daenerys.encontrar(armadura)
 	daenerys.encontrar(collar)
 
-  assert.equals([espada, libro, collar, armadura, collar], daenerys.historia())	
+  assert.equals([espada, libro, collar, armadura, collar], daenerys.historial_objetos())	
 }
