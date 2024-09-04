@@ -23,8 +23,6 @@ object daenerys{
     }
 
     method posee(artefacto){
-        return artefactos.contains(artefacto) or rocadragon.artefactos().contains(artefacto)
+        return self.posesiones().contains(artefacto)
     }
-
-    
 }
